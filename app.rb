@@ -2,9 +2,7 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "
-  <h1>Howdy!</h1>
-  "
+  erb(:homepage)
 end
 
 get("/rock") do
