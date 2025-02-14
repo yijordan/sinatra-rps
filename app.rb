@@ -1,9 +1,17 @@
 require "sinatra"
 require "sinatra/reloader"
 
-get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+get("/rock") do
+  moves = ["rock", "paper", "scissors"]
+  @com_move = moves.sample
+
+  if @com_move == "rock"
+    @outcome = "tied"
+  elsif @com_move == "paper"
+    @outcome = "lost"
+  else
+    @outcome = "won"
+  end
+
+  erb(:commentary)
 end
